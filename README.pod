@@ -2,29 +2,55 @@
 
 =head1 NAME
 
-Crypt::TripleDES::CBC - Triple DES in CBC mode
+Crypt::TripleDES::CBC - Triple DES in CBC mode Pure implementation
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+   use Crypt::TripleDES::CBC;
+ 
+   my $key = pack("H*"
+     , "1234567890123456"
+     . "7890123456789012");
+   my $iv = pack("H*","0000000000000000");
+   my $crypt = Crypt::TripleDES::CBC->new(
+     key => $key,
+     iv  => $iv,
+   );
+ 
+   $crypt->encrypt(pack("H*","0ABC0F2241535345631FCE"));
+   $crypt->decrypt(pack("H*","0ABC0F2241535345631FCE"));
+
+=head1 DESCRIPTION
+
+Most Modules on CPAN don't do a standards compliant implementation, while they
+are able to decrypt what they encrypt. There are corner cases where certain
+blocks of data in a chain don't decrypt properly. This is (almost)a pure perl
+implementation of TripleDES in CBC mode using Crypt::DES to encrypt individual
+blocks.
 
 =head1 ATTRIBUTES
 
 =head2 cipher1
 
-First Crypt::DES Cipher object generated from the key. This is built automatically.
+First Crypt::DES Cipher object generated from the key. This is built
+automatically. Do not set the manually.
 
 =head2 cipher2
 
-second Crypt::DES Cipher object generated from the key. This is built automatically.
+second Crypt::DES Cipher object generated from the key. This is built
+automatically. Do not set the manually.
 
 =head2 key
 
-Encryption Key
+Encryption Key this must be ascii packed string as shown in Synopsis.
 
 =head2 iv
 
-Initialization vector, default is null
+Initialization vector, default is a null string.
 
 =head1 METHODS
 
@@ -59,9 +85,19 @@ L<https://github.com/shantanubhadoria/crypt-tripledes-cbc>
 
 Shantanu Bhadoria <shantanu at cpan dott org>
 
-=head1 CONTRIBUTOR
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Shantanu <shantanu@cpan.org>
+
+=item *
 
 Shantanu Bhadoria <shantanu@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
