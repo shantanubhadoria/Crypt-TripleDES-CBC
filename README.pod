@@ -30,7 +30,7 @@ Initialization vector, default is null
 
 =head2 encrypt
 
-Encryptiont Method
+Encryption Method
 
 =head2 decrypt
 
