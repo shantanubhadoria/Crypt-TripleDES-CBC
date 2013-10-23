@@ -13,6 +13,12 @@ use Moose;
 use 5.010;
 use Crypt::DES;
 
+=attr cipher1
+
+First Crypt::DES Cipher object generated from the key. This is built automatically.
+
+=cut
+
 has cipher1 => (
     is         => 'ro',
     lazy_build => 1,
@@ -24,6 +30,12 @@ sub _build_cipher1 {
         substr($self->key,0,8)
     );
 }
+
+=attr cipher2
+
+second Crypt::DES Cipher object generated from the key. This is built automatically.
+
+=cut
 
 has cipher2 => (
     is         => 'ro',
@@ -37,10 +49,22 @@ sub _build_cipher2 {
     );
 }
 
+=attr key
+
+Encryption Key
+
+=cut
+
 has key => (
     is => 'ro',
     required => 1,
 );
+
+=attr iv
+
+Initialization vector, default is null
+
+=cut
 
 has iv  => (
     is => 'ro',
@@ -48,23 +72,11 @@ has iv  => (
     default  => pack("H*","0000000000000000"),
 );
 
-sub decrypt {
-    my ( $self, $ciphertext) = @_;
-    my $length = length($ciphertext);
-    my $result = '';
-    my $iv = $self->iv;
-    while($length > 8){
-        my $block = substr($ciphertext,0,8);
-        $ciphertext = substr($ciphertext,8);
-        my $cleartext = $self->_decrypt_3des($block);
-        $result .= $cleartext ^ $iv;
-        $iv = $block;
-        $length = length($ciphertext);
-    }
-    my $cleartext = $self->_decrypt_3des($ciphertext);
-    $result .= $cleartext ^ $iv;
-    return $result;
-}
+=method encrypt
+
+Encryption Method
+
+=cut
 
 sub encrypt {
     my ( $self, $cleartext) = @_;
@@ -81,6 +93,30 @@ sub encrypt {
     }
     my $ciphertext = $self->_encrypt_3des($cleartext^$iv);
     $result .= $ciphertext;
+    return $result;
+}
+
+=method decrypt
+
+Decryption method
+
+=cut
+
+sub decrypt {
+    my ( $self, $ciphertext) = @_;
+    my $length = length($ciphertext);
+    my $result = '';
+    my $iv = $self->iv;
+    while($length > 8){
+        my $block = substr($ciphertext,0,8);
+        $ciphertext = substr($ciphertext,8);
+        my $cleartext = $self->_decrypt_3des($block);
+        $result .= $cleartext ^ $iv;
+        $iv = $block;
+        $length = length($ciphertext);
+    }
+    my $cleartext = $self->_decrypt_3des($ciphertext);
+    $result .= $cleartext ^ $iv;
     return $result;
 }
 
