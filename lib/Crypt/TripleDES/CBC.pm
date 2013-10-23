@@ -3,7 +3,7 @@ use warnings;
 package Crypt::TripleDES::CBC;
 
 # PODNAME: Crypt::TripleDES::CBC
-# ABSTRACT: Triple DES in CBC mode 
+# ABSTRACT: Triple DES in CBC mode Pure implementation 
 # COPYRIGHT
 # VERSION
 
@@ -15,7 +15,8 @@ use Crypt::DES;
 
 =attr cipher1
 
-First Crypt::DES Cipher object generated from the key. This is built automatically.
+First Crypt::DES Cipher object generated from the key. This is built
+automatically. Do not set the manually.
 
 =cut
 
@@ -33,7 +34,8 @@ sub _build_cipher1 {
 
 =attr cipher2
 
-second Crypt::DES Cipher object generated from the key. This is built automatically.
+second Crypt::DES Cipher object generated from the key. This is built
+automatically. Do not set the manually.
 
 =cut
 
@@ -51,7 +53,7 @@ sub _build_cipher2 {
 
 =attr key
 
-Encryption Key
+Encryption Key this must be ascii packed string as shown in Synopsis.
 
 =cut
 
@@ -62,7 +64,7 @@ has key => (
 
 =attr iv
 
-Initialization vector, default is null
+Initialization vector, default is a null string.
 
 =cut
 
@@ -139,3 +141,35 @@ sub _decrypt_3des {
 }
 
 1;
+
+__END__
+
+=begin wikidoc
+
+= SYNOPSIS
+
+  use Crypt::TripleDES::CBC;
+
+  my $key = pack("H*"
+    , "1234567890123456"
+    . "7890123456789012");
+  my $iv = pack("H*","0000000000000000");
+  my $crypt = Crypt::TripleDES::CBC->new(
+    key => $key,
+    iv  => $iv,
+  );
+
+  $crypt->encrypt(pack("H*","0ABC0F2241535345631FCE"));
+  $crypt->decrypt(pack("H*","0ABC0F2241535345631FCE"));
+
+= DESCRIPTION
+
+Most Modules on CPAN don't do a standards compliant implementation, while they
+are able to decrypt what they encrypt. There are corner cases where certain
+blocks of data in a chain don't decrypt properly. This is (almost)a pure perl
+implementation of TripleDES in CBC mode using Crypt::DES to encrypt individual
+blocks.
+
+=end wikidoc
+
+=cut
