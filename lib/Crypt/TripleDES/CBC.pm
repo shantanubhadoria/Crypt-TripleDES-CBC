@@ -1,5 +1,13 @@
+use strict;
+use warnings;
 package Crypt::TripleDES::CBC;
 
+# PODNAME: Crypt::TripleDES::CBC
+# ABSTRACT: Triple DES in CBC mode 
+# COPYRIGHT
+# VERSION
+
+# Dependencies
 
 use Moose;
 use 5.010;
@@ -41,9 +49,10 @@ has iv  => (
 );
 
 sub decrypt {
-    my ( $self, $ciphertext, $iv ) = @_;
+    my ( $self, $ciphertext) = @_;
     my $length = length($ciphertext);
     my $result = '';
+    my $iv = $self->iv;
     while($length > 8){
         my $block = substr($ciphertext,0,8);
         $ciphertext = substr($ciphertext,8);
@@ -57,10 +66,11 @@ sub decrypt {
     return $result;
 }
 
-sub encrypt_3des_cbc {
-    my ( $self, $cleartext, $iv ) = @_;
+sub encrypt {
+    my ( $self, $cleartext) = @_;
     my $length = length($cleartext);
     my $result = '';
+    my $iv = $self->iv;
     while($length > 8){
         my $block = substr($cleartext,0,8);
         $cleartext = substr($cleartext,8);
@@ -91,3 +101,5 @@ sub _decrypt_3des {
         )
     );
 }
+
+1;
