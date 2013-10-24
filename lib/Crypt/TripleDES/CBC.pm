@@ -16,7 +16,7 @@ use Crypt::DES;
 =attr cipher1
 
 First Crypt::DES Cipher object generated from the key. This is built
-automatically. Do not set the manually.
+automatically. Do not change this value from your program.
 
 =cut
 
@@ -35,7 +35,7 @@ sub _build_cipher1 {
 =attr cipher2
 
 second Crypt::DES Cipher object generated from the key. This is built
-automatically. Do not set the manually.
+automatically. Do not change this value from your program.
 
 =cut
 
