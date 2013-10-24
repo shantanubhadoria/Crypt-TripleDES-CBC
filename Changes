@@ -1,5 +1,11 @@
 Changelog for Crypt-TripleDES-CBC
 
+0.003 2013-10-24T01:46:51
+ - Pod grammar fixes [Shantanu]
+
+0.002 2013-10-23T11:48:32
+ - v0.002 [Shantanu]
+
 0.001 2013-10-23T11:46:40
  - Updated POD Documentation [Shantanu]
  - v0.001
