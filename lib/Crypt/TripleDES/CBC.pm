@@ -159,8 +159,8 @@ __END__
     iv  => $iv,
   );
 
-  $crypt->encrypt(pack("H*","0ABC0F2241535345631FCE"));
-  $crypt->decrypt(pack("H*","0ABC0F2241535345631FCE"));
+  say unpack("H*",$crypt->encrypt(pack("H*","0ABC0F2241535345631FCE")));            # Output F64F2268BF6185A16DADEFD7378E5CE5
+  say unpack("H*",$crypt->decrypt(pack("H*","F64F2268BF6185A16DADEFD7378E5CE5")));  # Output 0ABC0F2241535345631FCE0000000000
 
 = DESCRIPTION
 
