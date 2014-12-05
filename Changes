@@ -1,18 +1,20 @@
 Changelog for Crypt-TripleDES-CBC
 
-0.003 2013-10-24T01:46:51
+0.004 2014-12-05T08:14:29
+ - Fixed Synopsis code, added example1.pl (Shantanu Bhadoria)
+
+0.003 2013-10-24T01:46:51Z
  - Pod grammar fixes [Shantanu]
 
-0.002 2013-10-23T11:48:32
+0.002 2013-10-23T11:48:32Z
  - v0.002 [Shantanu]
 
-0.001 2013-10-23T11:46:40
+0.001 2013-10-23T11:46:40Z
  - Updated POD Documentation [Shantanu]
- - v0.001
-   
-    - pod refactoring before release [Shantanu Bhadoria]
-    - Final Fixes [Shantanu Bhadoria]
-    - First bare commit [Shantanu Bhadoria] [Shantanu Bhadoria]
+ - v0.001 - pod refactoring before release [Shantanu Bhadoria] - Final
+   Fixes [Shantanu Bhadoria] - First bare commit [Shantanu Bhadoria]
+
+ [Shantanu Bhadoria]
  - pod refactoring before release [Shantanu Bhadoria]
  - Final Fixes [Shantanu Bhadoria]
  - First bare commit [Shantanu Bhadoria]
