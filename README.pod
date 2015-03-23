@@ -6,7 +6,7 @@ Crypt::TripleDES::CBC - Triple DES in CBC mode Pure implementation
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -69,7 +69,7 @@ Decryption method
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through github at 
-L<https://github.com/shantanubhadoria/crypt-tripledes-cbc/issues>.
+L<https://github.com/shantanubhadoria/perl-crypt-tripledes-cbc/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
@@ -77,13 +77,13 @@ You will be notified automatically of any progress on your issue.
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/shantanubhadoria/crypt-tripledes-cbc>
+L<https://github.com/shantanubhadoria/perl-crypt-tripledes-cbc>
 
-  git clone git://github.com/shantanubhadoria/crypt-tripledes-cbc.git
+  git clone git://github.com/shantanubhadoria/perl-crypt-tripledes-cbc.git
 
 =head1 AUTHOR
 
-Shantanu Bhadoria <shantanu at cpan dott org>
+Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
 
 =head1 CONTRIBUTORS
 
@@ -103,7 +103,7 @@ Shantanu Bhadoria <shantanu@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Shantanu Bhadoria.
+This software is copyright (c) 2015 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
