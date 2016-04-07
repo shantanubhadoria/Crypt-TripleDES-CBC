@@ -4,9 +4,23 @@
 
 Crypt::TripleDES::CBC - Triple DES in CBC mode Pure implementation
 
+
+
+=begin html
+
+<p>
+<img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="Requires Perl 5.10+" />
+<a href="https://travis-ci.org/shantanubhadoria/perl-Crypt-TripleDES-CBC"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Crypt-TripleDES-CBC.svg?branch=build/master" alt="Travis status" /></a>
+<a href="http://matrix.cpantesters.org/?dist=Crypt-TripleDES-CBC%200.006"><img src="https://badgedepot.code301.com/badge/cpantesters/Crypt-TripleDES-CBC/0.006" alt="CPAN Testers result" /></a>
+<a href="http://cpants.cpanauthors.org/dist/Crypt-TripleDES-CBC-0.006"><img src="https://badgedepot.code301.com/badge/kwalitee/Crypt-TripleDES-CBC/0.006" alt="Distribution kwalitee" /></a>
+<a href="https://gratipay.com/shantanubhadoria"><img src="https://img.shields.io/gratipay/shantanubhadoria.svg" alt="Gratipay" /></a>
+</p>
+
+=end html
+
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -85,25 +99,9 @@ L<https://github.com/shantanubhadoria/perl-crypt-tripledes-cbc>
 
 Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
 
-=head1 CONTRIBUTORS
-
-=for stopwords Shantanu Bhadoria
-
-=over 4
-
-=item *
-
-Shantanu <shantanu@cpan.org>
-
-=item *
-
-Shantanu Bhadoria <shantanu@cpan.org>
-
-=back
-
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Shantanu Bhadoria.
+This software is copyright (c) 2016 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,6 +1,9 @@
 Changelog for Crypt-TripleDES-CBC
 
-0.005 2015-03-23T06:41:50
+0.006 2016-04-07T06:51:01
+ - No changes found
+
+0.005 2015-03-23T06:41:50Z
  - dist.ini changes, added author website (Shantanu Bhadoria)
  - Fixes #1 (Shantanu Bhadoria)
 
@@ -22,4 +25,3 @@ Changelog for Crypt-TripleDES-CBC
  - pod refactoring before release [Shantanu Bhadoria]
  - Final Fixes [Shantanu Bhadoria]
  - First bare commit [Shantanu Bhadoria]
-
